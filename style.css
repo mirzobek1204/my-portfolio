@@ -1,19 +1,125 @@
+/* 1. RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #0b0f1a; /* To'q ko'k fon */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #38bdf8;
+}
+
+/* 2. NAVIGATION (BOLD & MODERN) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(15, 23, 42, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 800;
+    color: #38bdf8;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 700; /* BOLD */
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #38bdf8;
+}
+
+/* 3. CONTENT SECTIONS */
+.content-section {
+    padding: 100px 10%;
+    text-align: center;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: clamp(28px, 5vw, 48px); /* Avtomatik kichrayadi */
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+/* 4. BUTTONS */
+.btn-primary {
+    background: #38bdf8;
+    color: #0b0f1a;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+.btn-secondary {
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+/* 5. PROJECT CARDS */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    text-align: left;
+}
+
 .project-tag {
     background: rgba(56, 189, 248, 0.1);
     color: #38bdf8;
-    padding: 5px 12px;
+    padding: 4px 12px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: bold;
     display: inline-block;
     margin-bottom: 15px;
-}
-
-.project-links {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .private-repo {
@@ -22,12 +128,17 @@
     font-style: italic;
 }
 
-.btn-small {
-    background: #38bdf8;
-    color: #0b0f1a;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px;
+/* 6. MOBILE RESPONSIVE (THE FIX) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .nav-links {
+        margin-top: 15px;
+        gap: 15px;
+    }
+    .content-section {
+        padding: 60px 5%;
+    }
 }
