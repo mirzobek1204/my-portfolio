@@ -1,32 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Mirzobek</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS ni yana bir bor HTML ichiga joylaymiz, shunda xatolik ehtimoli nolga tushadi */
+        :root {
+            --bg: #030712;
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
+
+        /* NAVIGATSIYA */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 10%; position: fixed; width: 100%; z-index: 1000;
+            backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+        }
+        .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .menu-toggle { display: none; cursor: pointer; font-size: 28px; color: var(--primary); }
+        .nav-links { display: flex; list-style: none; gap: 40px; }
+        .nav-links a { text-decoration: none; color: #94a3b8; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: white; }
+
+        /* PROJECTS SECTION */
+        section { padding: 150px 10% 80px; min-height: 100vh; text-align: center; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; margin-bottom: 50px; }
+        .highlight { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* GRID SYSTEM */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* PROJECT CARDS */
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
+        }
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: white; }
+        .card p { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }
+        .tech-stack { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tech-tag {
+            font-size: 11px; font-weight: 700; color: var(--primary);
+            background: rgba(56, 189, 248, 0.1); padding: 4px 12px;
+            border-radius: 50px; border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* MOBIL VERSIYA */
+        @media (max-width: 768px) {
+            nav { padding: 15px 8%; }
+            .menu-toggle { display: block; }
+            .nav-links { 
+                display: none; position: absolute; top: 80px; right: 8%; background: rgba(3, 7, 18, 0.98); 
+                padding: 30px; border-radius: 20px; border: 1px solid var(--border); width: 200px;
+            }
+            .nav-active { display: flex; flex-direction: column; gap: 20px; }
+            section { padding-top: 130px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
     <nav>
         <a href="index.html" class="logo">MIRZO<span>BEK</span></a>
-        <ul class="nav-links">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
     <section>
-        <h1>My <span class="highlight">Portfolio</span></h1>
+        <h1>My <span class="highlight">Innovations</span></h1>
+        
         <div class="grid">
             <div class="card">
                 <h3>Smart Test Analyzer</h3>
-                <p>AI-driven system to analyze test results with high precision.</p>
+                <p>An AI-driven system designed at Al-Khwarizmi International University to analyze exam results with high precision.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Data Science</span>
+                    <span class="tech-tag">AI</span>
+                </div>
             </div>
+
             <div class="card">
                 <h3>Admin Bot System</h3>
-                <p>Telegram-based management bot for student data automation.</p>
+                <p>Telegram-based management bot for student data automation and key tracking.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Telegram API</span>
+                    <span class="tech-tag">Automation</span>
+                    <span class="tech-tag">OOP</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Math Problem Solver</h3>
+                <p>Algorithmic approach to solving complex Calculus and Linear Algebra sequences.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Mathematics</span>
+                    <span class="tech-tag">Calculus</span>
+                    <span class="tech-tag">Logic</span>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('nav-active');
+        }
+    </script>
 </body>
 </html>
