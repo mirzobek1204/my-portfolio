@@ -6,35 +6,70 @@
     <title>Contact | Mirzobek</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
-        /* TEPADAGI BILAN BIR XIL CSS... (Vaqtni tejash uchun asosiylari qoldirildi) */
-        :root { --bg: #030712; --primary: #38bdf8; --secondary: #818cf8; --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.1); }
+        :root {
+            --bg: #030712;
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; position: fixed; width: 100%; z-index: 1000; backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+
+        /* NAVIGATSIYA */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 10%; position: fixed; width: 100%; z-index: 1000;
+            backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+        }
         .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none; }
         .logo span { color: var(--primary); }
+        .menu-toggle { display: none; cursor: pointer; font-size: 28px; color: var(--primary); }
         .nav-links { display: flex; list-style: none; gap: 40px; }
-        .nav-links a { text-decoration: none; color: #94a3b8; font-weight: 500; }
-        section { padding: 180px 10% 80px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; text-align: center; }
-        
-        .contact-card { background: var(--glass); border: 1px solid var(--border); padding: 60px; border-radius: 40px; max-width: 600px; width: 100%; }
-        h1 { font-size: 3rem; margin-bottom: 20px; }
+        .nav-links a { text-decoration: none; color: #94a3b8; font-weight: 500; transition: 0.3s; }
+        .nav-links a.active, .nav-links a:hover { color: white; }
+
+        /* CONTACT SECTION */
+        section { padding: 140px 10% 80px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .contact-card { 
+            background: var(--glass); border: 1px solid var(--border); 
+            padding: 50px; border-radius: 30px; max-width: 550px; width: 100%; 
+        }
+        h1 { font-size: 3rem; margin-bottom: 20px; font-weight: 800; }
         .highlight { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
         .contact-btn { 
             display: block; width: 100%; padding: 18px; margin-top: 15px; border-radius: 15px;
             text-decoration: none; font-weight: 700; transition: 0.4s;
         }
         .tg { background: var(--primary); color: var(--bg); }
-        .mail { border: 1px solid var(--border); color: white; }
+        .mail { border: 1px solid var(--border); color: white; margin-top: 20px; }
         .tg:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); }
-        
-        @media (max-width: 768px) { .nav-links { display: none; } }
+
+        /* TELEFON UCHUN MAXSUS SOZLAMALAR */
+        @media (max-width: 768px) {
+            nav { padding: 15px 6%; }
+            .menu-toggle { display: block; }
+            .nav-links { 
+                display: none; flex-direction: column; position: absolute; top: 75px; right: 6%; 
+                background: rgba(3, 7, 18, 0.98); padding: 25px; border-radius: 20px; border: 1px solid var(--border); width: 220px;
+            }
+            .nav-active { display: flex !important; }
+            
+            /* SIZ AYTGAN MUAMMO: SO'ZLARNI KICHRAYTIRDIK */
+            h1 { font-size: 2rem !important; } /* Telefonda juda katta bo'lib ketmaydi */
+            p { font-size: 0.9rem !important; line-height: 1.4; }
+            .contact-card { padding: 35px 20px; }
+            section { padding-top: 120px; }
+        }
     </style>
 </head>
 <body>
     <nav>
         <a href="index.html" class="logo">MIRZO<span>BEK</span></a>
-        <ul class="nav-links">
+        <div class="menu-toggle" id="menuBtn">☰</div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
@@ -51,5 +86,22 @@
             <a href="mailto:mirzobekqurbanbayev5@gmail.com" class="contact-btn mail">Send Email</a>
         </div>
     </section>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        // MENYUNI OCHISH/YOPISH
+        menuBtn.onclick = () => {
+            navLinks.classList.toggle('nav-active');
+        };
+
+        // MUHIM: BO'LIM TANLANGANDA MENYUNI AVTOMATIK YOPISH
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.onclick = () => {
+                navLinks.classList.remove('nav-active');
+            };
+        });
+    </script>
 </body>
 </html>
