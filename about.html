@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Mirzobek</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Mirzobek</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
     <nav>
         <a href="index.html" class="logo">MIRZO<span>BEK</span></a>
-        <ul class="nav-links">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" class="active">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
     <section>
-        <div class="glass-card">
-            <h1>About <span class="highlight">Me</span></h1>
-            <p>I am <b>Mirzobek</b>, an AI developer at AKIU. My expertise lies in <b>Python (OOP)</b>, <b>Mathematics (Calculus & Linear Algebra)</b>, and <b>Automation</b>.</p>
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-                <span style="border: 1px solid var(--primary); padding: 5px 15px; border-radius: 50px; font-size: 12px;">Neural Networks</span>
-                <span style="border: 1px solid var(--primary); padding: 5px 15px; border-radius: 50px; font-size: 12px;">Data Analysis</span>
-                <span style="border: 1px solid var(--primary); padding: 5px 15px; border-radius: 50px; font-size: 12px;">Telegram Bot API</span>
+        <div class="glass-card" style="text-align: left;">
+            <h1>About <span class="highlight">My Journey</span></h1>
+            <p style="margin-bottom: 20px;">
+                I am **Mirzobek**, a dedicated student at **Al-Khwarizmi International University** (ID: 2125039). 
+                My focus is on **Information Systems and Digital Technology**, with a passion for building AI-driven solutions.
+            </p>
+            <p style="margin-bottom: 20px;">
+                I have a strong foundation in **Advanced Mathematics**, including Calculus and Linear Algebra, which I apply to develop efficient algorithms in **Python**.
+            </p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+                <span class="badge">Python (OOP)</span>
+                <span class="badge">AI/ML</span>
+                <span class="badge">Calculus</span>
+                <span class="badge">Telegram Bot API</span>
             </div>
         </div>
     </section>
+
+    <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('nav-active'); }</script>
 </body>
 </html>
