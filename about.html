@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Mirzobek</title>
+    <title>About | Mirzobek</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> </head>
+    <style>
+        :root {
+            --bg: #030712; --primary: #38bdf8; --secondary: #818cf8;
+            --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
+
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 10%; position: fixed; width: 100%; z-index: 1000;
+            backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+        }
+        .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .menu-toggle { display: none; cursor: pointer; font-size: 28px; color: var(--primary); }
+        .nav-links { display: flex; list-style: none; gap: 40px; }
+        .nav-links a { text-decoration: none; color: #94a3b8; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: white; }
+
+        section { padding: 160px 10% 80px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+        .glass-card {
+            background: var(--glass); border: 1px solid var(--border);
+            backdrop-filter: blur(15px); padding: 50px; border-radius: 30px;
+            max-width: 800px; width: 100%; text-align: left;
+        }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 30px; }
+        .highlight { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p { color: #94a3b8; font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px; }
+        
+        .skills-grid { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+        .skill-tag { 
+            background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2);
+            color: var(--primary); padding: 8px 20px; border-radius: 50px; font-size: 14px; font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 8%; }
+            .menu-toggle { display: block; }
+            .nav-links { 
+                display: none; position: absolute; top: 80px; right: 8%; background: rgba(3, 7, 18, 0.98); 
+                padding: 30px; border-radius: 20px; border: 1px solid var(--border); width: 200px;
+            }
+            .nav-active { display: flex; flex-direction: column; gap: 20px; }
+            .glass-card { padding: 30px; }
+        }
+    </style>
+</head>
 <body>
     <nav>
         <a href="index.html" class="logo">MIRZO<span>BEK</span></a>
@@ -19,24 +66,23 @@
     </nav>
 
     <section>
-        <div class="glass-card" style="text-align: left;">
-            <h1>About <span class="highlight">My Journey</span></h1>
-            <p style="margin-bottom: 20px;">
-                I am **Mirzobek**, a dedicated student at **Al-Khwarizmi International University** (ID: 2125039). 
-                My focus is on **Information Systems and Digital Technology**, with a passion for building AI-driven solutions.
-            </p>
-            <p style="margin-bottom: 20px;">
-                I have a strong foundation in **Advanced Mathematics**, including Calculus and Linear Algebra, which I apply to develop efficient algorithms in **Python**.
-            </p>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
-                <span class="badge">Python (OOP)</span>
-                <span class="badge">AI/ML</span>
-                <span class="badge">Calculus</span>
-                <span class="badge">Telegram Bot API</span>
+        <div class="glass-card">
+            <h1>Expertise in <span class="highlight">Artificial Intelligence</span></h1>
+            <p>I am <b>Mirzobek</b>, an Information Systems student at <b>Al-Khwarizmi International University (AKIU)</b>. My academic path is driven by a deep fascination with how neural networks can solve complex human problems.</p>
+            <p>With a strong foundation in <b>Advanced Mathematics</b> and <b>Object-Oriented Programming</b>, I specialize in building automated solutions that are not only functional but also scalable.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-tag">Python (OOP)</div>
+                <div class="skill-tag">Calculus</div>
+                <div class="skill-tag">Neural Networks</div>
+                <div class="skill-tag">Linear Algebra</div>
+                <div class="skill-tag">Telegram Bot API</div>
             </div>
         </div>
     </section>
 
-    <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('nav-active'); }</script>
+    <script>
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('nav-active'); }
+    </script>
 </body>
 </html>
