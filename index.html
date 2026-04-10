@@ -1,67 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirzobek | AI Engineer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
-    <style>
-        /* HAMMA STILLAR SHU YERDA - Alohida CSS fayl shart emas */
-        :root {
-            --bg: #030712;
-            --primary: #38bdf8;
-            --secondary: #818cf8;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg); color: #f8fafc; overflow-x: hidden; line-height: 1.6; }
-
-        /* NAVIGATSIYA */
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 25px 10%; position: fixed; width: 100%; z-index: 1000;
-            backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
-        }
-        .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none; }
-        .logo span { color: var(--primary); }
-        .menu-toggle { display: none; cursor: pointer; font-size: 28px; color: var(--primary); }
-        .nav-links { display: flex; list-style: none; gap: 40px; }
-        .nav-links a { text-decoration: none; color: #94a3b8; font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: white; }
-
-        /* HERO SECTION */
-        section { padding: 180px 10% 80px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .badge { background: rgba(56, 189, 248, 0.1); color: var(--primary); padding: 8px 20px; border-radius: 100px; font-size: 12px; font-weight: 800; letter-spacing: 2px; border: 1px solid rgba(56, 189, 248, 0.2); margin-bottom: 20px; }
-        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 25px; }
-        .highlight { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .description { color: #94a3b8; font-size: 1.2rem; max-width: 650px; margin-bottom: 40px; }
-
-        /* TUGMALAR */
-        .btn-group { display: flex; gap: 20px; }
-        .btn-main { background: var(--primary); color: var(--bg); padding: 16px 35px; border-radius: 12px; font-weight: 700; text-decoration: none; transition: 0.4s; }
-        .btn-outline { border: 1px solid var(--border); color: white; padding: 16px 35px; border-radius: 12px; font-weight: 700; text-decoration: none; transition: 0.4s; }
-        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4); }
-
-        /* MOBIL VERSIYA */
-        @media (max-width: 768px) {
-            nav { padding: 15px 8%; }
-            .menu-toggle { display: block; }
-            .nav-links { 
-                display: none; position: absolute; top: 80px; right: 8%; background: rgba(3, 7, 18, 0.98); 
-                padding: 30px; border-radius: 20px; border: 1px solid var(--border); width: 200px;
-            }
-            .nav-active { display: flex; flex-direction: column; gap: 20px; }
-            h1 { font-size: 2.3rem; }
-            .btn-group { flex-direction: column; width: 100%; }
-            .btn-main, .btn-outline { width: 100%; text-align: center; }
-        }
-    </style>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirzobek | AI Engineer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
-        <a href="#" class="logo">MIRZO<span>BEK</span></a>
+        <a href="index.html" class="logo">MIRZO<span>BEK</span></a>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html" class="active">Home</a></li>
@@ -70,22 +16,16 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-
     <section>
-        <span class="badge">AKIU STUDENT | ID: 2125039</span>
-        <h1>Architecting <br><span class="highlight">AI & Smart Systems</span> 🚀</h1>
-        <p class="description">Python Developer specializing in Artificial Intelligence. Building intelligent solutions at Al-Khwarizmi International University.</p>
-        
-        <div class="btn-group">
-            <a href="projects.html" class="btn-main">View My Work</a>
-            <a href="https://t.me/miracle_0023" class="btn-outline">Let's Connect</a>
+        <div style="background: rgba(56, 189, 248, 0.1); color: var(--primary); padding: 6px 15px; border-radius: 50px; font-size: 11px; font-weight: 800; margin-bottom: 20px; border: 1px solid rgba(56, 189, 248, 0.2);">AKIU STUDENT ID: 2125039</div>
+        <h1>Building <span class="highlight">Future Intelligence</span> 🚀</h1>
+        <p style="max-width: 600px; color: #94a3b8; font-size: 1.1rem;">Python Developer specializing in AI systems and automation.</p>
+        <div style="margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+            <a href="projects.html" style="background: var(--primary); color: var(--bg); padding: 15px 35px; border-radius: 12px; font-weight: 700; text-decoration: none;">Projects</a>
+            <a href="contact.html" style="border: 1px solid var(--border); color: white; padding: 15px 35px; border-radius: 12px; font-weight: 700; text-decoration: none;">Contact</a>
         </div>
     </section>
-
-    <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('nav-active');
-        }
-    </script>
+    <script src="script.js"></script>
+    <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('nav-active'); }</script>
 </body>
 </html>
