@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Mirzobek</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        /* TEPADAGI BILAN BIR XIL CSS... (Vaqtni tejash uchun asosiylari qoldirildi) */
+        :root { --bg: #030712; --primary: #38bdf8; --secondary: #818cf8; --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; position: fixed; width: 100%; z-index: 1000; backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .logo { font-size: 24px; font-weight: 800; color: white; text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; list-style: none; gap: 40px; }
+        .nav-links a { text-decoration: none; color: #94a3b8; font-weight: 500; }
+        section { padding: 180px 10% 80px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        
+        .contact-card { background: var(--glass); border: 1px solid var(--border); padding: 60px; border-radius: 40px; max-width: 600px; width: 100%; }
+        h1 { font-size: 3rem; margin-bottom: 20px; }
+        .highlight { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .contact-btn { 
+            display: block; width: 100%; padding: 18px; margin-top: 15px; border-radius: 15px;
+            text-decoration: none; font-weight: 700; transition: 0.4s;
+        }
+        .tg { background: var(--primary); color: var(--bg); }
+        .mail { border: 1px solid var(--border); color: white; }
+        .tg:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); }
+        
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
 </head>
 <body>
     <nav>
@@ -15,14 +41,14 @@
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </nav>
+
     <section>
-        <div class="glass-card">
-            <h1>Get <span class="highlight">In Touch</span></h1>
-            <p>Ready to discuss AI innovations?</p>
-            <div class="btn-group" style="justify-content: center;">
-                <a href="https://t.me/miracle_0023" class="btn-main">Telegram Message</a>
-                <a href="mailto:mirzobekqurbanbayev5@gmail.com" class="btn-outline">Send Email</a>
-            </div>
+        <div class="contact-card">
+            <h1>Let's <span class="highlight">Connect</span></h1>
+            <p style="color: #94a3b8; margin-bottom: 30px;">Open for collaborations in AI, Automation, and Digital Systems.</p>
+            
+            <a href="https://t.me/miracle_0023" class="contact-btn tg">Telegram (Admin)</a>
+            <a href="mailto:mirzobekqurbanbayev5@gmail.com" class="contact-btn mail">Send Email</a>
         </div>
     </section>
 </body>
