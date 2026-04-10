@@ -24,53 +24,35 @@ nav {
 .nav-links a { text-decoration: none; color: #94a3b8; font-weight: 500; transition: 0.3s; }
 .nav-links a.active, .nav-links a:hover { color: white; }
 
-/* SECTIONS & CARDS */
+/* ASOSIY SECTIONLAR */
 section { padding: 140px 10% 80px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; text-align: center; }
 .glass-card {
     background: var(--glass); border: 1px solid var(--border);
-    backdrop-filter: blur(15px); padding: 45px; border-radius: 28px;
+    backdrop-filter: blur(20px); padding: 50px; border-radius: 30px;
     max-width: 850px; width: 100%; margin: 0 auto;
 }
 h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 800; margin-bottom: 25px; line-height: 1.1; }
 .highlight { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-/* GRID SYSTEM (Projects uchun) */
+/* PROJECTS GRID */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; max-width: 1100px; margin-top: 40px; }
-.card { background: var(--glass); border: 1px solid var(--border); padding: 35px; border-radius: 20px; text-align: left; transition: 0.4s; }
+.card { background: var(--glass); border: 1px solid var(--border); padding: 35px; border-radius: 24px; text-align: left; transition: 0.4s; }
 .card:hover { transform: translateY(-10px); border-color: var(--primary); }
 
-/* MOBIL VERSIYA (Telefondagi "very great" holat uchun) */
+/* TAGS */
+.tag-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+.tag { border: 1px solid var(--primary); color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; text-decoration: none; }
+
+/* MOBIL VERSIYA */
 @media (max-width: 768px) {
     nav { padding: 15px 6%; }
     .menu-toggle { display: block; }
     .nav-links { 
         display: none; flex-direction: column; position: absolute; top: 75px; right: 6%; 
-        background: rgba(3, 7, 18, 0.98); padding: 25px; border-radius: 15px; border: 1px solid var(--border); width: 220px;
+        background: rgba(3, 7, 18, 0.98); padding: 25px; border-radius: 20px; border: 1px solid var(--border); width: 220px;
     }
     .nav-active { display: flex !important; }
     section { padding: 120px 6% 60px; }
-    .glass-card { padding: 30px 20px; }
-    .grid { grid-template-columns: 1fr; }
-}
-/* --- TELEFONDA MATNLARNI IXCHAM QILISH --- */
-@media (max-width: 768px) {
-    h1 { 
-        font-size: 1.8rem !important; /* Ulkan yozuvni kichraytirdik */
-        margin-bottom: 15px; 
-    }
-    
-    p { 
-        font-size: 0.9rem !important; /* Matn endi o'qishga juda qulay */
-        line-height: 1.4;
-    }
-
-    .glass-card {
-        padding: 30px 15px !important; /* Blokni ixcham qildik */
-    }
-
-    /* Menyu ochilganda ekranni to'liq to'sib qo'ymasligi uchun */
-    .nav-links {
-        height: auto;
-        padding: 20px;
-    }
+    .glass-card { padding: 35px 20px; }
+    h1 { font-size: 2.1rem !important; }
 }
