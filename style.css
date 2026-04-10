@@ -67,3 +67,16 @@ h1 { font-size: 45px; margin-bottom: 20px; font-weight: 800; }
     h1 { font-size: 30px; }
     .content-section { padding: 40px 5%; }
 }
+/* About sahifasi uchun maxsus padding va tekislash */
+.about-container {
+    padding: 20px;
+    background: rgba(30, 41, 59, 0.5); /* Shaffof fon */
+    border-radius: 15px;
+    border: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+/* Aktiv menyuni ajratib ko'rsatish */
+.nav-links a.active {
+    color: #38bdf8;
+    border-bottom: 2px solid #38bdf8;
+}
