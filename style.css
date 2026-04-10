@@ -1,8 +1,27 @@
-/* Umumiy dizayn */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-body { background: #0b0f1a; color: #ffffff; line-height: 1.6; }
+/* =========================================
+   1. UMUMIY SOZLAMALAR (Hamma uchun)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-/* NAV Menyuni BOLD qilish */
+body {
+    background: #0b0f1a; /* To'q ko'k fon */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Muhim so'zlarni ajratib ko'rsatish */
+.highlight {
+    color: #38bdf8; /* Och ko'k rang */
+}
+
+/* =========================================
+   2. NAVIGATSIYA (Menyu)
+   ========================================= */
 nav {
     display: flex;
     justify-content: space-between;
@@ -13,30 +32,169 @@ nav {
     top: 0;
     z-index: 1000;
 }
-.logo { font-weight: 800; color: #38bdf8; font-size: 24px; }
-.nav-links { display: flex; list-style: none; gap: 30px; }
+
+.logo {
+    font-weight: 800;
+    color: #38bdf8;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
 .nav-links a {
     color: #94a3b8;
     text-decoration: none;
-    font-weight: 700; /* BOLD */
+    font-weight: 700;
     text-transform: uppercase;
+    font-size: 14px;
     transition: 0.3s;
 }
-.nav-links a:hover, .nav-links a.active { color: #38bdf8; }
 
-/* Sahifa mazmuni */
+.nav-links a:hover, .nav-links a.active {
+    color: #38bdf8;
+}
+
+/* =========================================
+   3. SAHIFA MAZMUNI (Content)
+   ========================================= */
 .content-section {
     padding: 100px 10%;
     text-align: center;
     min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-h1 { font-size: 45px; margin-bottom: 20px; font-weight: 800; }
-.highlight { color: #38bdf8; }
 
-/* Tugmalar */
-.btn-primary { background: #38bdf8; color: #0b0f1a; padding: 12px 25px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; margin: 10px; }
-.btn-secondary { border: 2px solid #38bdf8; color: #38bdf8; padding: 10px 25px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; margin: 10px; }
+h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
 
-/* Kartochkalar */
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
-.project-card { background: #1e293b; padding: 30px; border-radius: 15px; border: 1px solid rgba(56, 189, 248, 0.2); }
+/* =========================================
+   4. TUGMALAR (Buttons)
+   ========================================= */
+.btn-primary {
+    background: #38bdf8;
+    color: #0b0f1a;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+/* =========================================
+   5. KARTOCHKALAR (Projects, Skills)
+   ========================================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    text-align: left;
+}
+
+
+/* =========================================
+   🚀 6. TELEFON VA PLANSHETLAR UCHUN MOSLASH (The Expert Fix)
+   ========================================= */
+
+/* A. Kichik ekranlar (Telefonlar: 768px dan kichik) */
+@media (max-width: 768px) {
+    
+    /* 1. Nav menyuni vertikal (ustma-ust) qilish */
+    nav {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap; /* Agar sig'masa pastga tushadi */
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    /* 2. Matn o'lchamlarini kichraytirish */
+    h1 {
+        font-size: 28px; /* Sarlavha telefonda kichikroq */
+        line-height: 1.3;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    /* 3. Sahifa paddingini kamaytirish */
+    .content-section {
+        padding: 60px 5%;
+    }
+
+    /* 4. Tugmalarni to'liq eniga qilish (ixtiyoriy) */
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80%; /* Tugmalar telefonda kengroq */
+        text-align: center;
+    }
+}
+
+/* B. Juda kichik ekranlar (Eski telefonlar: 480px dan kichik) */
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
